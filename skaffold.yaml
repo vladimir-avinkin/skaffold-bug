@@ -1,0 +1,8 @@
+apiVersion: skaffold/v2beta13
+kind: Config
+deploy:
+  helm:
+    releases:
+      - name: test
+        remoteChart: bitnami/nginx
+        namespace: "dev-{{ .TEST_NAMESPACE }}"
